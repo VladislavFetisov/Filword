@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="536.0" prefWidth="1005.0" style="-fx-background-image: url('/introduction.jpg');"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="FillWordApp.Controllers.Introduction">
+    <Button layoutX="14.0" layoutY="258.0" mnemonicParsing="false" onAction="#startGame6x6" prefHeight="106.0"
+            prefWidth="451.0" style="-fx-background-color: orchid" text="Хочу размяться,играем 36 клеток">
+        <font>
+            <Font size="24.0"/>
+        </font>
+    </Button>
+    <Button layoutX="518.0" layoutY="258.0" mnemonicParsing="false" onAction="#startGame8x8" prefHeight="106.0"
+            prefWidth="451.0" style="-fx-background-color: orchid" text="Играю по-крупному,сделай 64 клетки">
+        <font>
+            <Font size="24.0"/>
+        </font>
+    </Button>
+    <Text layoutX="265.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Приветствуем тебя в Филвордах!" wrappingWidth="400.0">
+        <font>
+            <Font name="System Bold" size="24.0"/>
+        </font>
+    </Text>
+    <Text layoutX="767.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Created by Vladislav Fetisov"
+          wrappingWidth="227.13671875">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Text>
+    <Text layoutX="330.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пожалуйста,выбери режим игры"
+          wrappingWidth="399.9999906867743">
+        <font>
+            <Font name="System Bold" size="24.0"/>
+        </font>
+    </Text>
+</AnchorPane>
