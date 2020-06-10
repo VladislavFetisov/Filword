@@ -4,6 +4,6 @@ module Fillwords {
     requires javafx.controls;
     exports FillWordApp.Controllers;
     exports FillWordApp.View;
-    opens FillWordApp.View to javafx.graphics;
-    opens FillWordApp.Controllers to javafx.controls;
+    opens FillWordApp.View;
+    opens FillWordApp.Controllers;
 }
