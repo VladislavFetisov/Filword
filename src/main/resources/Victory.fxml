@@ -4,29 +4,25 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="800.0" style="-fx-background-image: url('/victory.png');" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FillWordApp.Controllers.Victory">
-    <Button fx:id="startNewGame" layoutX="327.0" layoutY="586.0" mnemonicParsing="false" onAction="#newGame" prefHeight="61.0" prefWidth="145.0" style="-fx-background-color: burlywood;" text="Закрыть окно">
+<AnchorPane prefHeight="536.0" prefWidth="1005.0" style="-fx-background-image: url('/victory.png');" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FillWordApp.Controllers.Victory">
+    <Button layoutX="43.0" layoutY="190.0" mnemonicParsing="false" onAction="#restart" prefHeight="42.0" prefWidth="199.0" style="-fx-background-color: lightseagreen" text="Начать новую игру">
         <font>
             <Font size="18.0" />
         </font>
     </Button>
-    <Text layoutX="44.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: burlywood;" text="Поздравляем победителя!" wrappingWidth="263.13670349121094">
+    <Button fx:id="button" layoutX="43.0" layoutY="317.0" mnemonicParsing="false" onAction="#close" prefHeight="42.0" prefWidth="199.0" style="-fx-background-color: lightseagreen" text="Закрыть Филворды">
         <font>
             <Font size="18.0" />
         </font>
-    </Text>
-    <Text layoutX="44.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ты был прекрасен!" wrappingWidth="217.13670349121094">
+    </Button>
+    <Text layoutX="305.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Поздравляем тебя,победитель!" wrappingWidth="437.13671875">
         <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
         </font>
     </Text>
-    <Text layoutX="44.0" layoutY="558.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Может еще сыграем?" wrappingWidth="217.13669300079346">
+    <Text layoutX="305.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ты отлично постарался,сыграем еще?" wrappingWidth="437.13671875">
         <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
         </font>
     </Text>
-    <Text layoutX="44.0" layoutY="597.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Тогда закрой окно и начни новую игру!" wrappingWidth="274.13672637939453">
-        <font>
-            <Font size="18.0" />
-        </font></Text>
 </AnchorPane>
