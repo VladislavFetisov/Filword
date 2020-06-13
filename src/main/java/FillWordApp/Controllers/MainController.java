@@ -14,7 +14,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,10 +29,10 @@ public class MainController {
     public Button cancel;
     public AnchorPane anchorPane;
 
-    private Model model = new Model();
-    private char[][] panel = model.fillModel(Introduction.getModelSize());
-    private HashSet<String> words = model.words;
-    private HashSet<ArrayList<Pair>> coordinates = model.wordsCoordinates;
+    private final Model model = new Model();
+    private final char[][] panel = model.fillModel(Introduction.getModelSize());
+    private final HashSet<String> words = model.words;
+    private final HashSet<ArrayList<Pair>> coordinates = model.wordsCoordinates;
 
     private final HashSet<String> guessedWords = new HashSet<>();
     private final StringBuilder currentWord = new StringBuilder();
@@ -117,8 +116,8 @@ public class MainController {
         newWindow.setScene(secondScene);
         newWindow.getIcons().add(new Image("/fillword.png"));
 
-        newWindow.initModality(Modality.APPLICATION_MODAL);
-        newWindow.initOwner(View.getStage());
+        Stage stage = (Stage) cancel.getScene().getWindow();
+        stage.close();
 
         newWindow.show();
     }
@@ -137,17 +136,15 @@ public class MainController {
     }
 
     public void restartAPP() {
-        model = new Model();
-        words = model.words;
-        coordinates = model.wordsCoordinates;
-        panel = model.fillModel(Introduction.getModelSize());
-
-        textArea.clear();
-        currentCoordinates.clear();
-        currentWord.setLength(0);
-        guessedWords.clear();
-        gridPane.getChildren().clear();
-        initialize();
+        Stage stage = (Stage) cancel.getScene().getWindow();
+        stage.close();
+        Stage newStage = new Stage();
+        View view = new View();
+        try {
+            view.start(newStage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static String RandomColorGeneration() {

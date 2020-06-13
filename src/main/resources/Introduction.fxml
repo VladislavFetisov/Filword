@@ -6,8 +6,9 @@
 <AnchorPane prefHeight="536.0" prefWidth="1005.0" style="-fx-background-image: url('/introduction.jpg');"
             xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="FillWordApp.Controllers.Introduction">
-    <Button layoutX="14.0" layoutY="258.0" mnemonicParsing="false" onAction="#startGame6x6" prefHeight="106.0"
-            prefWidth="451.0" style="-fx-background-color: orchid" text="Хочу размяться,играем 36 клеток">
+    <Button fx:id="button" layoutX="14.0" layoutY="258.0" mnemonicParsing="false" onAction="#startGame6x6"
+            prefHeight="106.0" prefWidth="451.0" style="-fx-background-color: orchid"
+            text="Хочу размяться,играем 36 клеток">
         <font>
             <Font size="24.0"/>
         </font>
@@ -18,8 +19,8 @@
             <Font size="24.0"/>
         </font>
     </Button>
-    <Text layoutX="265.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0"
-          text="Приветствуем тебя в Филвордах!" wrappingWidth="400.0">
+    <Text layoutX="265.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Приветствуем тебя в Филвордах!"
+          wrappingWidth="400.0">
         <font>
             <Font name="System Bold" size="24.0"/>
         </font>

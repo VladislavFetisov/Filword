@@ -1,17 +1,17 @@
 package FillWordApp.Controllers;
 
-import FillWordApp.View.View;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Introduction {
-    private static int size=0;
+    private static int size = 0;
+    public Button button;
 
     public static int getModelSize() {
         return size;
@@ -29,7 +29,7 @@ public class Introduction {
 
     private void startGame() throws IOException {
         Group root = new Group();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainAppearance.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Main.fxml"));
         root.getChildren().add(loader.load());
 
         Scene mainScene = new Scene(root);
@@ -39,9 +39,8 @@ public class Introduction {
         mainWindow.setScene(mainScene);
         mainWindow.getIcons().add(new Image("/fillword.png"));
 
-        mainWindow.initModality(Modality.APPLICATION_MODAL);
-        mainWindow.initOwner(View.getStage());
-
         mainWindow.show();
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
     }
 }

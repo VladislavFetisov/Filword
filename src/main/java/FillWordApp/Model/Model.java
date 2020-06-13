@@ -87,7 +87,7 @@ public class Model {
     public char[][] fillModel(int size)  {
         ArrayList<WordLocation[]> options = new ArrayList<>();
         char[][] result = new char[size][size];
-        int Row = 0, Column = 0;
+        int row, column;
 
         if (size == 6) {
             options.add(table_6);
@@ -105,35 +105,39 @@ public class Model {
         ArrayList<String> wordsFromDB = WordsDB.getWords(wordsLengths);
 
         for (int i = 0; i < table.length; i++) {
-
             WordLocation location = table[i];
+            System.out.println(location);
             String word = wordsFromDB.get(i);
+            System.out.println(word);
             words.add(word);
 
             ArrayList<Pair> wordCoordinates = new ArrayList<>();
-            for (int j = 0; j < word.length(); j++) {
-                if (j == 0) {
-                    Row = location.start.row;
-                    Column = location.start.column;
-                } else if (location.straightLength != 0) {
-                    switch (location.straight) {
-                        case TOP -> Row--;
-                        case RIGHT -> Column++;
-                        case BOTTOM -> Row++;
-                        case LEFT -> Column--;
+
+
+            row = location.start.row;
+            column = location.start.column;
+            result[row][column] = word.charAt(0);
+            wordCoordinates.add(new Pair(row, column));
+
+
+            int length = location.straightLength;
+            Direction direction = location.straight;
+            for (int j = 1; j < word.length(); j++) {
+                if (length != 0) {
+                    switch (direction) {
+                        case TOP -> row--;
+                        case RIGHT -> column++;
+                        case BOTTOM -> row++;
+                        case LEFT -> column--;
                     }
-                    location.straightLength--;
-                } else if (location.turningLength != 0) {
-                    switch (location.turning) {
-                        case TOP -> Row--;
-                        case RIGHT -> Column++;
-                        case BOTTOM -> Row++;
-                        case LEFT -> Column--;
-                    }
-                    location.turningLength--;
+                    length--;
+                    result[row][column] = word.charAt(j);
+                    wordCoordinates.add(new Pair(row, column));
+                } else {
+                    length = location.turningLength;
+                    direction = location.turning;
+                    j--;
                 }
-                result[Row][Column] = word.charAt(j);
-                wordCoordinates.add(new Pair(Row, Column));
             }
             wordsCoordinates.add(wordCoordinates);
         }
