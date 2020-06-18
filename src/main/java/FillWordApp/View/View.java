@@ -10,15 +10,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class View extends Application {
-    private static Stage primaryStage;
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    public static Stage getStage() {
-        return primaryStage;
-    }
 
     @Override
     public void start(Stage primaryStage) throws IOException {

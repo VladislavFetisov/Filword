@@ -106,9 +106,7 @@ public class Model {
 
         for (int i = 0; i < table.length; i++) {
             WordLocation location = table[i];
-            System.out.println(location);
             String word = wordsFromDB.get(i);
-            System.out.println(word);
             words.add(word);
 
             ArrayList<Pair> wordCoordinates = new ArrayList<>();

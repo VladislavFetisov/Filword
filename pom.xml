@@ -18,37 +18,16 @@
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
-
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.1.1</version>
-
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.4</version>
                 <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-
-                    <archive>
-                        <manifest>
-                            <mainClass>FillWordApp.View.View</mainClass>
-                        </manifest>
-                    </archive>
-
+                    <source>14</source>
+                    <target>14</target>
+                    <mainClass>FillWordApp.View.View</mainClass>
                 </configuration>
-
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-
             </plugin>
-
         </plugins>
     </build>
     <dependencies>
@@ -81,7 +60,6 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics </artifactId>
             <version>14.0.1</version>
-            <classifier>win</classifier>
         </dependency>
 
         <dependency>
