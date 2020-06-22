@@ -58,7 +58,6 @@ public class MainController {
                 gridPane.add(letter, j, i);
             }
         }
-        textArea.setText("Отгаданные слова:");
     }
 
 

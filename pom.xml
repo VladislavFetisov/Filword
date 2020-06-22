@@ -13,8 +13,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>14</source>
-                    <target>14</target>
+                    <source>13</source>
+                    <target>13</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -22,14 +22,13 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.4</version>
                 <configuration>
-                    <source>14</source>
-                    <target>14</target>
+                    <source>13</source>
+                    <target>13</target>
                     <launcher>hellofx</launcher>
                     <jlinkImageName>hello</jlinkImageName>
                     <jlinkZipName>hellozip</jlinkZipName>
                     <mainClass>FillWordApp.View.View</mainClass>
-                    <jlinkExecutable>C:\Program Files\Java\jdk-14.0.1\bin\jlink</jlinkExecutable>
-                    <executable>C:\Program Files\Java\jdk-14.0.1\bin\java</executable>
+
                 </configuration>
             </plugin>
         </plugins>
@@ -50,19 +49,19 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>14.0.1</version>
+            <version>13.0.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>14.0.1</version>
+            <version>13.0.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics </artifactId>
-            <version>14.0.1</version>
+            <version>13.0.2</version>
         </dependency>
 
     </dependencies>

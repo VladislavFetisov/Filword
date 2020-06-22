@@ -6,6 +6,7 @@ import java.util.HashSet;
 
 import static FillWordApp.Model.Model.Direction.*;
 
+
 public class Model {
     public HashSet<ArrayList<Pair>> wordsCoordinates = new HashSet<>();
     public HashSet<String> words = new HashSet<>();
@@ -123,10 +124,18 @@ public class Model {
             for (int j = 1; j < word.length(); j++) {
                 if (length != 0) {
                     switch (direction) {
-                        case TOP -> row--;
-                        case RIGHT -> column++;
-                        case BOTTOM -> row++;
-                        case LEFT -> column--;
+                        case TOP:
+                            row--;
+                            break;
+                        case RIGHT:
+                            column++;
+                            break;
+                        case BOTTOM:
+                            row++;
+                            break;
+                        case LEFT:
+                            column--;
+                            break;
                     }
                     length--;
                     result[row][column] = word.charAt(j);

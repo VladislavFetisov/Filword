@@ -9,12 +9,11 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 public class WordsDB {
 
     public static ArrayList<String> getWords(List<Integer> wordsLengths) {
-        char sep = File.separatorChar;
         ArrayList<String> result = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(
-                        "src" + sep + "main" + sep + "resources" + sep + "wordsDataBase.txt"), UTF_8))) {
+                        (WordsDB.class.getResource("/wordsDataBase.txt")).getFile()), UTF_8))) {
             String line = reader.readLine();
             for (int i = 0; i < wordsLengths.get(0) - 3; i++) line = reader.readLine();//отматываем сразу до нужной линии
 
